@@ -1,0 +1,18 @@
+img.right {
+    float: right;
+}
+
+img.left {
+    float: left;
+}
+
+.block-heading,
+.block-paragraph,
+.block-image {
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+img {
+    
+}
