@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'wagtail.wagtailcore',
 
     'modelcluster',
-    'compressor',
     'taggit',
 
     'django.contrib.admin',
@@ -120,8 +119,7 @@ USE_TZ = True
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'compressor.finders.CompressorFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder'
 )
 
 STATICFILES_DIRS = (
