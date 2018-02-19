@@ -16,3 +16,9 @@ img.left {
 img {
     
 }
+
+body {
+    background: rgba(237, 245, 254, 0.5);
+    color: rgb(26, 23, 18);
+    font-family: Georgia, Roboto Slab, serif;
+}
