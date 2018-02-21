@@ -2,3 +2,6 @@
 __pycache__
 static/*
 !static
+media/*
+!media
+*.sqlite3
