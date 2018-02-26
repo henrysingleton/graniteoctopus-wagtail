@@ -1,9 +1,8 @@
 from .base import *
 
-
 DEBUG = False
 TEMPLATE_DEBUG = False
-SECRET_KEY = '' #Remember to change this. 
+SECRET_KEY = '' #Remember to change this.
 
 DATABASES = {
     'default': {
