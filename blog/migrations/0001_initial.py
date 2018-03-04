@@ -2,9 +2,9 @@
 from __future__ import unicode_literals
 
 from django.db import models, migrations
-import wagtail.wagtailcore.fields
-import wagtail.wagtailcore.blocks
-import wagtail.wagtailimages.blocks
+import wagtail.core.fields
+import wagtail.core.blocks
+import wagtail.images.blocks
 
 
 class Migration(migrations.Migration):
