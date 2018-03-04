@@ -1,5 +1,6 @@
 from .base import *
 
+
 DEBUG = False
 TEMPLATE_DEBUG = False
 SECRET_KEY = '' #Remember to change this.
@@ -16,6 +17,10 @@ DATABASES = {
 }
 
 ALLOWED_HOSTS = [
+    '127.0.0.1'
+]
+
+CSRF_TRUSTED_ORIGINS = [
     'graniteoctopus.com'
 ]
 
