@@ -1,20 +1,14 @@
 Granite Octopus Site
 ====================
 
-This project is a personal site for my blog. Currently running Wagtail 2.0.
+This project is a personal site for my blog. Currently running Wagtail 2.4.
 
 Developing
 ----------
 
 1. Clone this repo
-2. Install a virtual env with something like:
-
-   > mkproject -p . -r ./requirements.txt --python=python3.6 ~/.virtualenvs/goctopus
-
-3. `workon goctopus`
-4. `python manage.py migrate`
-5. `python manage.py runserver`
-6. Do a happy dance
+2. `docker-compose up`
+3. `docker-compose exec web python manage.py migrate`
 
 Deploying
 ---------

@@ -1,0 +1,12 @@
+# DB
+psycopg2-binary
+
+# Wagtail
+wagtail ~= 2.0
+wagtail-metadata
+
+# Django
+django ~= 2.0
+
+# Dev stuff
+pip-tools
