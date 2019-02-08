@@ -19,4 +19,7 @@ Currently deployed to a VPS. To deploy:
 
 You'll need to do manual re-loading on the web server. Script doesnt do it atm.
 
+`source /opt/webapps/goctopus/env/bin/activate`
+`pip install -r /opt/webapps/goctopus/site/requirements.txt`
+`python /opt/webapps/goctopus/site/manage.py migrate`
 `sudo supervisorctl restart graniteoctopus`
