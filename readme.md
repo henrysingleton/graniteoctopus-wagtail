@@ -18,3 +18,5 @@ Currently deployed to a VPS. To deploy:
 `./deploy.sh`
 
 You'll need to do manual re-loading on the web server. Script doesnt do it atm.
+
+`sudo supervisorctl restart graniteoctopus`

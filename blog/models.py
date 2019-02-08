@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.db import models
 
 from wagtail.core.models import Page
@@ -7,10 +9,12 @@ from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.search import index
 
+class DefaultDateField(models.DateField):
+    def get_default(self):
+        return datetime.now
 
 class BlogPage(Page):
-    author = models.CharField(max_length=255)
-    date = models.DateField("Post date")
+    date = DefaultDateField("Post date")
     body = StreamField([
         ('heading', blocks.CharBlock(classname="full title")),
         ('paragraph', blocks.RichTextBlock()),
@@ -24,7 +28,6 @@ class BlogPage(Page):
     ]
 
     content_panels = Page.content_panels + [
-        FieldPanel('author'),
-        FieldPanel('date'),
         StreamFieldPanel('body'),
+        FieldPanel('date'),
     ]
