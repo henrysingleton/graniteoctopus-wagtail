@@ -18,6 +18,8 @@ Currently deployed to a VPS. To deploy:
 `./deploy.sh`
 
 You'll need to do manual re-loading on the web server. Script doesnt do it atm.
+If you add a new app you will need to explicitly add its directory to the
+`deploy.sh` file. 
 
 `source /opt/webapps/goctopus/env/bin/activate`
 `pip install -r /opt/webapps/goctopus/site/requirements.txt`
