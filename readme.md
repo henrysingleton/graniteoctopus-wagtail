@@ -14,7 +14,7 @@ Hosting
 -------
 Currently hosted at Vultr on a VPS.
 There is an S3 bucket created but this has not been configured in the
-application yet. 
+application yet.
 
 Deploying
 ---------

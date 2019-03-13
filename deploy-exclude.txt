@@ -1,4 +1,5 @@
 graniteoctopus/settings/production.py
 graniteoctopus/settings/dev.py
 graniteoctopus/settings/local.py
+graniteoctopus/settings/__init__.py
 *.pyc
