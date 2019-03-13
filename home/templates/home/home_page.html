@@ -9,11 +9,15 @@
 
     <div class="intro">{{ page.intro|richtext }}</div>
 
-    <nav>
-        <ul>
+    <nav class="blog-posts-nav">
+        <ul class="blog-posts-list">
             {% for post in page.get_children %}
-                <li>
-                    <a href="{% pageurl post %}">{{ post.title }}</a>
+                <li class="blog-posts-list__item">
+                    <a href="{% pageurl post %}" class="blog-posts-list__link">
+                        <span class="blog-posts-list__title">
+                            {{ post.title }}
+                        </span>
+                    </a>
                 </li>
             {% endfor %}
         </ul>

@@ -18,7 +18,31 @@ img {
 }
 
 body {
-    background: rgba(237, 245, 254, 0.5);
-    color: rgb(26, 23, 18);
-    font-family: Georgia, Roboto Slab, serif;
+    background: rgba(0, 222, 254, 0.5);
+    color: rgb(52, 48, 17);
+    font-family: Avenir-Black, "Helvetica Neue Bold", "Arial Black";
+}
+
+.blog-posts-list {
+    padding: 0;
+}
+
+.blog-posts-list__item {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.blog-posts-list__link {
+    padding: 10px;
+    background: rgba(12, 167, 0, 0.72);
+    background: white;
+    /*color: #ffddbf;*/
+    color: blue;
+    box-shadow: rgba(0, 0, 0, 0.85) 10px 10px 0;
+}
+
+.blog-posts-list__link:hover {
+    position: relative;
+    padding: 13px;
+    box-shadow: rgba(0, 0, 0, 0.85) 7px 7px 0;
 }
