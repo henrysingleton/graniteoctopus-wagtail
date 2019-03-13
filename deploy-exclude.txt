@@ -1,2 +1,4 @@
-graniteoctopus/settings/*
+graniteoctopus/settings/production.py
+graniteoctopus/settings/dev.py
+graniteoctopus/settings/local.py
 *.pyc
