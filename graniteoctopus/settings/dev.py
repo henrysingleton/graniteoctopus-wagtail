@@ -20,6 +20,17 @@ DATABASES = {
     }
 }
 
+ALLOWED_HOSTS = [
+    'localhost',
+    'local.henrysingleton.com'
+]
+
+INTERNAL_IPS = [
+    '127.0.0.1',
+    '0.0.0.0',
+    '172.20.0.1'
+]
+
 try:
     from .local import *
 except ImportError:

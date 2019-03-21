@@ -1,0 +1,38 @@
+{% extends "base_personal.html" %}
+
+{% load wagtailcore_tags %}
+
+{% load static %}
+
+{% block content %}
+        <main>
+            <section>
+                <h1>{{ page.title }}</h1>
+                <div class="intro">{{ page.intro|richtext }}</div>
+                <address>
+                    <div class="contact-info">
+                        <img src="{% static "images/email.svg" %}" alt="Email:">
+                        <span class="sr">Email:</span>
+                        <a href="mailto:henry@henrysingleton.com">henry@henrysingleton.com</a>
+                    </div>
+                    <div class="contact-info">
+                        <img src="{% static "images/phone.svg" %}" alt="Phone:">
+                        <span class="sr">Phone:</span>
+                        <a href="tel:+61 468 684 387">+61 468 684 387</a>
+                    </div>
+                    <div class="contact-info">
+                        <img src="{% static "images/github.svg" %}" alt="GitHub:">
+                        <a href="http://github.com/henrysingleton">GitHub</a>
+                    </div>
+                    <div class="contact-info">
+                        <img src="{% static "images/linkedin.svg" %}" alt="LinkedIn:">
+                        <a href="https://www.linkedin.com/in/henry-singleton/">LinkedIn</a>
+                    </div>
+                    <div class="contact-info download">
+                        <img src="{% static "images/vcard.svg" %}" alt="Download:">
+                        <a href="{% static "files/henry-singleton.vcf" %}">Download my contact card</a>
+                    </div>
+                </address>
+            </section>
+        </main>
+{% endblock %}

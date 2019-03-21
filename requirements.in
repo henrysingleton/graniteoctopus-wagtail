@@ -10,3 +10,4 @@ django ~= 2.0
 
 # Dev stuff
 pip-tools
+django-debug-toolbar

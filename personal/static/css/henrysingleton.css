@@ -1,0 +1,85 @@
+html {
+    font-size: 15px;
+}
+body {
+    background: rgba(0, 222, 254, 0.5);
+    color: rgb(52, 48, 17);
+    font-family: Avenir-Black, "Helvetica Neue Bold", "Arial Black", "Helvetica Neue", Helvetica, Arial;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-basis: 480px;
+}
+
+h1 {
+    text-shadow: rgb(255, 0, 128) 8px 5px 0;
+    font-size: 5rem;
+    font-weight: normal;
+    margin: 2rem 0 1rem 0;
+}
+
+.intro {
+    font: normal 2rem Avenir, Helvetica Neue, Helvetica, Arial;
+    text-align: center;
+    margin: 3rem 0 3.5rem;
+}
+
+address {
+    padding: 18px 20px 18px 25px;
+    margin: 30px 22px 12px 3px;
+    background: rgb(255,255,255);
+    box-shadow: rgba(32, 28, 7, 0.82) 20px 20px 0;
+    border: 1px solid rgb(235, 235, 245);
+    font-style: normal;
+    font: normal 1.5rem Avenir, Helvetica Neue, Helvetica, Arial;
+}
+
+img {
+    width: 1.4rem;
+    padding-right: 0.4rem;
+}
+
+a {
+    color: rgb(71, 25, 236);
+}
+
+address a {
+    position: relative;
+    left: 5px;
+}
+
+.sr {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.contact-info {
+    margin-bottom: 1rem;
+}
+
+.contact-info:last-child {
+    margin-bottom: 0px;
+}
+
+@media only screen and (max-width: 647px) {
+    html {
+        font-size: 12px;
+    }
+    h1 {
+        font-size: 3.5rem;
+        text-align: center;
+    }
+    .intro {
+        font-size: 1.5rem;
+    }
+
+}
+
+@media only screen and (max-width: 320px) {
+    html {
+        font-size: 10px;
+    }
+
+}
