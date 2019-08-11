@@ -30,18 +30,7 @@ Currently deployed to a VPS. To deploy:
 
 `./deploy.sh`  
 
-Site is installed in /opt/webapps/goctopus
+Site is installed in `/opt/webapps/goctopus`
 
-You'll need to do manual re-loading on the web server. Script doesnt do it atm.
 If you add a new app you will need to explicitly add its directory to the
 `deploy.sh` file.
-
-We could use `pip-sync` below but gunicorn is not included in requirements.txt,
-and it is manually installed on the server in the same virtual environment, so 
-it would be removed if `pip-sync` were run. 
-
-1. `ssh graniteoctopus`
-2. `source /opt/webapps/goctopus/env/bin/activate`  
-3. `pip install -r /opt/webapps/goctopus/site/requirements.txt`  
-4. `python /opt/webapps/goctopus/site/manage.py migrate`  
-5. `sudo supervisorctl restart goctopus`  
