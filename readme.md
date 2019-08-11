@@ -23,11 +23,13 @@ Currently deployed to a VPS. To deploy:
 
 `./deploy.sh`
 
+Site is installed in /opt/webapps/goctopus
+
 You'll need to do manual re-loading on the web server. Script doesnt do it atm.
 If you add a new app you will need to explicitly add its directory to the
 `deploy.sh` file.
 
-`source /opt/webapps/goctopus/env/bin/activate`
-`pip install -r /opt/webapps/goctopus/site/requirements.txt`
-`python /opt/webapps/goctopus/site/manage.py migrate`
-`sudo supervisorctl restart graniteoctopus`
+1. `source /opt/webapps/goctopus/env/bin/activate`  
+2. `pip install -r /opt/webapps/goctopus/site/requirements.txt`  
+3. `python /opt/webapps/goctopus/site/manage.py migrate`  
+4. `sudo supervisorctl restart goctopus`  

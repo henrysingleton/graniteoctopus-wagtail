@@ -14,7 +14,8 @@ img.left {
 }
 
 img {
-    
+    max-width: 1200px;
+    height: auto;
 }
 
 body {
