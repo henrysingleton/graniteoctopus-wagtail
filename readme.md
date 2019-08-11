@@ -16,6 +16,13 @@ Currently hosted at Vultr on a VPS.
 There is an S3 bucket created but this has not been configured in the
 application yet.
 
+Updating
+--------
+
+1. `pip-compile --upgrade`
+2. `pip-sync`
+3. `python manage.py migrate`
+
 Deploying
 ---------
 
