@@ -8,6 +8,10 @@ wagtail-metadata
 # Django
 django ~= 2.0
 
+# S3
+django-storages
+boto3
+
 # Dev stuff
 pip-tools
 django-debug-toolbar
