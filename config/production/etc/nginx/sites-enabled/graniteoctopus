@@ -1,5 +1,5 @@
 server {
-    server_name graniteoctopus.com;
+    server_name www.graniteoctopus.com;
 
     access_log off;
 
