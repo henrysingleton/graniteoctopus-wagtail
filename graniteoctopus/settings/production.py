@@ -17,11 +17,13 @@ DATABASES = {
 }
 
 ALLOWED_HOSTS = [
-    '127.0.0.1'
+    '127.0.0.1',
+    'www.graniteoctopus.com',
+    'www.henrysingleton.com'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'graniteoctopus.com'
+    'www.graniteoctopus.com'
 ]
 
 try:
