@@ -32,8 +32,3 @@ ALLOWED_HOSTS = [
 CSRF_TRUSTED_ORIGINS = [
     'www.graniteoctopus.com'
 ]
-
-try:
-    from .local import *
-except ImportError:
-    pass

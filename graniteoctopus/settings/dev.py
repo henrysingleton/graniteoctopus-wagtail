@@ -30,8 +30,3 @@ INTERNAL_IPS = [
     '0.0.0.0',
     '172.20.0.1'
 ]
-
-try:
-    from .local import *
-except ImportError:
-    pass
