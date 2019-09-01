@@ -7,7 +7,7 @@
 beautifulsoup4==4.6.0     # via wagtail
 boto3==1.9.206
 botocore==1.12.206        # via boto3, s3transfer
-certifi==2019.6.16        # via requests
+certifi==2019.6.16        # via requests, sentry-sdk
 chardet==3.0.4            # via requests
 click==7.0                # via pip-tools
 django-debug-toolbar==2.0
@@ -29,10 +29,11 @@ python-dateutil==2.8.0    # via botocore
 pytz==2019.2              # via django, django-modelcluster, wagtail
 requests==2.22.0          # via wagtail
 s3transfer==0.2.1         # via boto3
+sentry-sdk==0.11.2
 six==1.12.0               # via html5lib, pip-tools, python-dateutil, wagtail
 sqlparse==0.3.0           # via django, django-debug-toolbar
 unidecode==1.1.1          # via wagtail
-urllib3==1.25.3           # via botocore, requests
+urllib3==1.25.3           # via botocore, requests, sentry-sdk
 wagtail-metadata==2.0.1
 wagtail==2.6.1
 webencodings==0.5.1       # via html5lib

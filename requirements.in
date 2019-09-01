@@ -15,3 +15,4 @@ boto3
 # Dev stuff
 pip-tools
 django-debug-toolbar
+sentry-sdk==0.11.2

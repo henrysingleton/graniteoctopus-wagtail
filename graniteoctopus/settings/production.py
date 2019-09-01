@@ -1,5 +1,12 @@
 from .base import *
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 
+sentry_sdk.init(
+    #TODO: Add DSN here
+    dsn="",
+    integrations=[DjangoIntegration()]
+)
 
 DEBUG = False
 TEMPLATE_DEBUG = False
