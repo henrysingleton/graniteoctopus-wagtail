@@ -1,6 +1,5 @@
 from __future__ import unicode_literals
 
-from django.db import models
 from wagtail.admin.edit_handlers import FieldPanel
 from wagtail.core.fields import RichTextField
 

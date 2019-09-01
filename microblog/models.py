@@ -2,6 +2,7 @@ from django.db import models
 
 from wagtail.admin.edit_handlers import FieldPanel
 
+
 class MicroBlogPost(models.Model):
     content = models.TextField(max_length=420, blank=True)
     uri = models.URLField(blank=True)
@@ -10,6 +11,7 @@ class MicroBlogPost(models.Model):
     image = models.ImageField(blank=True)
 
     panels = [
+        FieldPanel('slug'),
         FieldPanel('content'),
         FieldPanel('uri'),
         FieldPanel('uri_name'),
