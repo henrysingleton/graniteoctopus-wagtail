@@ -2,20 +2,23 @@ from datetime import datetime
 
 from django.db import models
 from django.forms.widgets import Select, CheckboxSelectMultiple
+from django.utils.timezone import now
 
 from modelcluster.fields import ForeignKey, ManyToManyField, ParentalManyToManyField
 
 from wagtail.core.models import Page
-from wagtail.core.fields import StreamField
+from wagtail.core.fields import StreamField, RichTextField
 from wagtail.core import blocks
-from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
+from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel, RichTextFieldPanel
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.search import index
 from wagtail.snippets.models import register_snippet
 
+
 class DefaultDateField(models.DateField):
     def get_default(self):
         return datetime.now
+
 
 class BlogPage(Page):
     date = DefaultDateField("Post date")
@@ -43,6 +46,7 @@ class BlogPage(Page):
         FieldPanel('related', widget=CheckboxSelectMultiple)
     ]
 
+
 @register_snippet
 class BlogCategory(models.Model):
     name = models.CharField(max_length=255)
@@ -59,3 +63,20 @@ class BlogCategory(models.Model):
     class Meta:
         verbose_name = "Category"
         verbose_name_plural = "Categories"
+
+
+class DiaryEntry(models.Model):
+    date = models.DateField(default=now)
+    content = RichTextField()
+
+    panels = [
+        FieldPanel('date'),
+        RichTextFieldPanel('content')
+    ]
+
+    def __str__(self):
+        return "Dev diary entry for %s" % self.date.__str__()
+
+    class Meta:
+        verbose_name = "Dev Diary Entry"
+        verbose_name_plural = "Dev Diary Entries"
