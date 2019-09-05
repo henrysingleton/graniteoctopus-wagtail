@@ -3,9 +3,11 @@ from datetime import datetime
 from django.db import models
 from django.forms.widgets import Select, CheckboxSelectMultiple
 from django.utils.timezone import now
+from django.utils.html import format_html
 
 from modelcluster.fields import ForeignKey, ManyToManyField, ParentalManyToManyField
 
+from wagtail.contrib.modeladmin.options import ModelAdmin
 from wagtail.core.models import Page
 from wagtail.core.fields import StreamField, RichTextField
 from wagtail.core import blocks
@@ -76,6 +78,11 @@ class DiaryEntry(models.Model):
 
     def __str__(self):
         return "Dev diary entry for %s" % self.date.__str__()
+
+    def html_output(self):
+        return format_html(
+            self.content[:175]
+        )
 
     class Meta:
         verbose_name = "Dev Diary Entry"
