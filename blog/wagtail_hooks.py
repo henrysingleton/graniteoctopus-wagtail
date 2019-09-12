@@ -8,6 +8,7 @@ class DevDiaryAdmin(ModelAdmin):
     menu_icon = 'pilcrow'
     list_display = ('date', 'html_output')
     search_fields = ('date', 'content')
+    ordering = ('-date',)
 
 
 modeladmin_register(DevDiaryAdmin)
