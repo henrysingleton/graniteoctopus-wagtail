@@ -7,3 +7,5 @@ media/*
 !media
 *.sqlite3
 .vscode
+!.idea
+.idea/workspace.xml
