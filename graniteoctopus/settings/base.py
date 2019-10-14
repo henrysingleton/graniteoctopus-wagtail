@@ -152,7 +152,7 @@ if os.environ.get('AWS_STORAGE_BUCKET_NAME'):
     MEDIA_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
 else:
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-    MEDIA_URL = 'http://localhost/media/'
+    MEDIA_URL = '/media/'
 
 # Wagtail settings
 
