@@ -28,9 +28,14 @@
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
+
         {% wagtailuserbar %}
 
-        {% block content %}{% endblock %}
+        <div class="flex__container">
+            <div class="flex__item">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
 
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/graniteoctopus.js' %}"></script>
