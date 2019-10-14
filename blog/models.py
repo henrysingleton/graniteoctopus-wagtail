@@ -5,9 +5,8 @@ from django.forms.widgets import Select, CheckboxSelectMultiple
 from django.utils.timezone import now
 from django.utils.html import format_html
 
-from modelcluster.fields import ForeignKey, ManyToManyField, ParentalManyToManyField
+from modelcluster.fields import ForeignKey, ParentalManyToManyField
 
-from wagtail.contrib.modeladmin.options import ModelAdmin
 from wagtail.core.models import Page
 from wagtail.core.fields import StreamField, RichTextField
 from wagtail.core import blocks
@@ -24,6 +23,7 @@ class DefaultDateField(models.DateField):
 
 class BlogPage(Page):
     date = DefaultDateField("Post date")
+    introduction = RichTextField(blank=True)
     body = StreamField([
         ('heading', blocks.CharBlock(classname="full title")),
         ('paragraph', blocks.RichTextBlock()),
@@ -40,8 +40,8 @@ class BlogPage(Page):
     search_fields = Page.search_fields + [
         index.SearchField('body'),
     ]
-
     content_panels = Page.content_panels + [
+        RichTextFieldPanel('introduction', classname="full"),
         StreamFieldPanel('body'),
         FieldPanel('date'),
         FieldPanel('category', widget=Select),
