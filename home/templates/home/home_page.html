@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% load wagtailcore_tags %}
+{% load blog_extras %}
 
 {% block body_class %}template-blogindexpage{% endblock %}
 
@@ -10,17 +11,31 @@
     <div class="intro">{{ page.intro|richtext }}</div>
 
     <nav class="blog-posts-nav">
-        <ul class="blog-posts-list">
-            {% for post in page.get_children %}
-                <li class="blog-posts-list__item">
+        <div class="blog-posts-list">
+            {% for post in posts %}
+                <div class="blog-posts-list__item">
                     <a href="{% pageurl post %}" class="blog-posts-list__link">
-                        <span class="blog-posts-list__title">
+                        <h2 class="blog-posts-list__title">
                             {{ post.title }}
-                        </span>
+                        </h2>
                     </a>
-                </li>
+                    {{ post.date }}
+
+                    {% if post.category %}
+                        {# TODO: add category pages so we can link to them. Also get root URL properly #}
+                        {# in <a href="{% url something%}/category/{{ post.category.slug }}">{{ post.category }}</a> #}
+                        in {{ post.category }}
+                    {% endif %}
+
+                    {# If the post has an introduction, display that, otherwise show the body text truncated #}
+                    {% if post.introduction %}
+                        {{ post.introduction|richtext }}
+                    {% else %}
+                        {{ post.body|blocks_by_type:'paragraph'|first|truncatewords_html:40 }}
+                    {% endif %}
+                </div>
             {% endfor %}
-        </ul>
+        </div>
     </nav>
 
 {% endblock %}
