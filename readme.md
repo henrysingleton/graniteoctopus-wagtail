@@ -1,14 +1,22 @@
 Granite Octopus Site
 ====================
 
-This project is a personal site for my blog. Currently running Wagtail 2.4.
+This project is a personal site for my blog. Currently running Wagtail 2.6.
 
 Developing
 ----------
 
+Bare minimum: 
 1. Clone this repo
 2. `docker-compose up`
 3. `docker-compose exec web python manage.py migrate`
+4. Visit http://localhost:8000/admin
+
+Suggest using Pycharm for running containers. The `.idea` directory contains working Run/Debug Configurations which 
+pycharm should be able to import. You can then very easily debug code in the running container with minimal effort. 
+
+The debug toolbar should be enabled for local IPs, but the internal Docker IP may change. If this happens, you will 
+need to add it to the `INTENRAL_IPS` list in `graniteoctopus/settings/dev.py`. 
 
 Hosting
 -------
