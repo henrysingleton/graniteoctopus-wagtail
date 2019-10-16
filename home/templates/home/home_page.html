@@ -37,9 +37,11 @@
                         {{ post.body|blocks_by_type:'paragraph'|first|truncatewords_html:40 }}
                     {% endif %}
                 </div>
+                {% if post.listing_image %}
                 <div class="blog-posts-item blog-posts-item--image">
-                    {% image post.listing_image width-272 %}
+                    {% image post.listing_image fill-270x200 %}
                 </div>
+                {% endif %}
             </div>
             {% endfor %}
         </div>
