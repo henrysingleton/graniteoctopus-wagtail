@@ -11,6 +11,7 @@ from wagtail.core.models import Page
 from wagtail.core.fields import StreamField, RichTextField
 from wagtail.core import blocks
 from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel, RichTextFieldPanel
+from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.search import index
 from wagtail.snippets.models import register_snippet
@@ -24,6 +25,13 @@ class DefaultDateField(models.DateField):
 class BlogPage(Page):
     date = DefaultDateField("Post date")
     introduction = RichTextField(blank=True)
+    listing_image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
     body = StreamField([
         ('heading', blocks.CharBlock(classname="full title")),
         ('paragraph', blocks.RichTextBlock()),
@@ -31,6 +39,8 @@ class BlogPage(Page):
                                   icon='code')),
         ('image', ImageChooserBlock()),
     ])
+
+
 
     category = ForeignKey('blog.BlogCategory', null=True, blank=True,
                           on_delete=models.DO_NOTHING)
@@ -41,7 +51,8 @@ class BlogPage(Page):
         index.SearchField('body'),
     ]
     content_panels = Page.content_panels + [
-        RichTextFieldPanel('introduction', classname="full"),
+        FieldPanel('introduction', classname="full"),
+        ImageChooserPanel('listing_image'),
         StreamFieldPanel('body'),
         FieldPanel('date'),
         FieldPanel('category', widget=Select),
