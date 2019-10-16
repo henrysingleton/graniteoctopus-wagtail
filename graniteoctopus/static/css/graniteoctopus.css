@@ -39,6 +39,19 @@ body {
 }
 
 .blog-posts-list__item {
+    display: flex;
+    flex-direction: row;
+}
+
+.blog-posts-item {
+
+}
+
+.blog-posts-item--text {
+    flex-basis: 100%;
+}
+
+.blog-posts-item--image {
 
 }
 
