@@ -43,7 +43,7 @@ body {
     flex-direction: row;
     background: #0D0D0D;
     color: #F5F5F5;
-    padding: 14px 18px 1px 18px;
+    padding: 14px 18px;
     margin-bottom: 43px;
     position: relative;
 }
@@ -68,6 +68,10 @@ body {
 
 .blog-posts-item--text {
     flex-basis: 100%;
+}
+
+blog-posts-item--text .rich-text p:last-child {
+    margin-bottom: 0;
 }
 
 .blog-posts-item--image {
