@@ -9,6 +9,8 @@ Developing
 1. Clone this repo
 2. `docker-compose up`
 3. `docker-compose exec web python manage.py migrate`
+4. `docker-compose exec web python manage.py createsuperuser`
+5. `open http://localhost:8000/admin`
 
 Hosting
 -------
