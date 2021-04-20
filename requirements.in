@@ -2,7 +2,7 @@
 psycopg2-binary
 
 # Wagtail
-wagtail ~= 2.0
+wagtail ~= 2.11
 wagtail-metadata
 
 # Django
