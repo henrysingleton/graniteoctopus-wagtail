@@ -6,7 +6,7 @@ wagtail ~= 2.0
 wagtail-metadata
 
 # Django
-django ~= 2.0
+django ~= 2.2
 
 # S3
 django-storages
